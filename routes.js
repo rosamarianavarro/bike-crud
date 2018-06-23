@@ -4,13 +4,10 @@ let app = require('./app');
 //import mysql db connection
 let con = require('./mysqlcon');
 
-/* Before connecting to a DB, make sure to check mysqlcon.js */
-/*
 con.connect( err => {
     if (err) throw err;
     console.log("Connected to DB");
   });
-*/
 
 //root route:
 app.get('/', (req, res) => {
@@ -18,6 +15,28 @@ app.get('/', (req, res) => {
 })
 
 app.post('/addUser', (req, res) => {
-    console.log("Soy el servidor y me siento obligado a guardar en la DB:");
-    console.log(req.body);
+    
+    let nuevoUsuario = req.body;
+
+    let sql = `INSERT INTO user(
+                userName, 
+                userEmail, 
+                userPass) 
+                VALUES (
+                    '${nuevoUsuario.userName}',
+                    '${nuevoUsuario.userEmail}',
+                    '${nuevoUsuario.userPass}'
+                )`;
+
+    con.query(sql, nuevoUsuario, (err, result) => {
+        if(err){
+            console.log("Error al insertar: " + err.code);
+            } else {
+            res.send(
+                { "status": "OK"}
+            );
+        }
+        
+    });
+    
 });

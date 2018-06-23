@@ -1,13 +1,9 @@
 $('document').ready( () => {
 
- //inicializar el form validator
- $.validate({
-    modules : 'security'
-  });   
+
    
 
     $('#cancelar').click( () => {
-        console.log("cancelar");
         $(location).attr('href', 'http://localhost:5500/bicicletas/index.html')
     })//cancelar click
 
@@ -32,8 +28,12 @@ $('document').ready( () => {
 
             let newUser = { userName, userEmail, userPass: userPass1 };
             
-            $.post('http://localhost:3000/addUser', newUser, () => {
-
+            $.post('http://127.0.0.1:3000/addUser', newUser, (resultado) => {
+                console.log("Cliente ha recibido: ", resultado);
+                if(resultado.status === "OK"){
+                    alert("Se ha registrado con éxito. Abriendo la página de login");
+                    $(location).attr('href', 'http://localhost:5500/login.html')
+                }
             })//post
 
 

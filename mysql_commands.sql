@@ -1,0 +1,10 @@
+CREATE DATABASE bikedb;
+
+USE bikedb;
+
+CREATE TABLE user(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    userName VARCHAR(100), 
+    userEmail VARCHAR(100), 
+    userPass VARCHAR(100)
+);
