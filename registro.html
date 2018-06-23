@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bs4/bootstrap.min.css">
+    <script src="bs4/bootstrap.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="js_libs/jquery-3.3.1.min.js"></script>
+
+    <!-- jQuery UI CSS Styles -->
+    <link rel="stylesheet" href="js_libs/jqueryui/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="js_libs/jqueryui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js_libs/jqueryui/jquery-ui.theme.min.css">
+
+    <!-- jQuery UI JS Script-->
+    <script type="text/javascript" src="js_libs/jqueryui/jquery-ui.min.js"></script>
+
+    <!-- Form Validator JS y CSS-->
+    <link rel="stylesheet" href="css/theme-default.min.css">
+    <script src="js_libs/jquery.form-validator.min.js"></script>    
+
+    <!-- Our own JS-->
+    <script src="js/registro.js"></script>
+
+    <!-- Our own CSS-->
+    <link rel="stylesheet" href="css/registro.css">
+
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mt-5 mb-5 bg-primary">
+                    <h1 class="display-4 text-white">Únete a ByRossyBike</h1>
+            </div>
+        </div>                            
+        <div class="row">
+            <div class="col-md-12 text-center mt-5 mb-5">
+                <p class="text-center">
+                    ¿Tienes una cuenta?<br>
+                    <a href="#" data-toggle="modal" data-target="#modal-login" data-dismiss="modal">Accede Aquí</a>
+                </p>                 
+              
+               <button class="btn text-white btn-lg btn-block mb-md-3 mb-3 rmn-facebook">
+                   Regístrate usando Facebook
+               </button>
+                <p class="text-center">
+                    o rellena los siguientes campos.
+                </p>
+                <form class="validar-formulario" novalidate>
+                   <div class="form-row">
+                       
+                        <div class="col-md-12 mb-3">
+
+                            <input 
+                            type="text" 
+                            class="form-control"
+                            id="iptName"                            
+                            placeholder="Nombre"
+                            data-validation="required"
+                            >
+
+                        </div><!--col-->
+                                                       
+                           <div class="col-md-12 mb-3">
+
+                            <input 
+                            type="email" 
+                            class="form-control"
+                            id="iptEmail"                            
+                            placeholder="Correo Electrónico"
+                            data-validation="required email"
+                            >
+
+                        </div><!--col-->   
+                        
+                        <div class="col-md-12 mb-3">
+                            <input 
+                            type="password" 
+                            class="form-control"
+                            id="iptPass1"
+                            name="pass_confirmation"
+                            placeholder="Contraseña"
+                            data-validation="length" 
+                            data-validation-length="min3"                            
+                            >
+                        </div><!--col-->                            
+                                                 
+                        <div class="col-md-12 mb-3">
+                            <input 
+                            type="password" 
+                            class="form-control"
+                            name="pass" 
+                            id="iptPass2"
+                            placeholder="Repíte la Contraseña"
+                            data-validation="confirmation"
+                            >
+                        </div><!--col-->                                                                                                          
+                   </div>
+                    <button class="btn btn-lg btn-block btn-warning" type="button" data-dismiss="modal" id="cancelar">Cancelar</button>
+                    <button class="btn btn-lg btn-block btn-success" type="button" id="enviar">Iniciar sesión</button>                  
+                </form>
+
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,5 @@
+$('document').ready( () => {
+
+    $('#box').draggable();
+
+});
